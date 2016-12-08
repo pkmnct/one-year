@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+i {
+    color: #CCC;
+}
+
 h1, h2 {
   width: 100%;
   float: left;
@@ -93,10 +97,6 @@ video {
   width: 100%;
 }
 
-.ps-header {
-    padding: 150px !important;
-}
-
 .video-text {
     margin-top: 0;
     margin-bottom: 0;
@@ -140,4 +140,35 @@ video {
 	height: 15px;
 	margin-bottom: 4px;
 	margin-left: 5px;	
+}
+
+#player {
+	max-width: 90%;
+}
+
+@media screen and (max-width: 740px) {
+    h3 a {
+    	font-size: 20px !important;
+	}
+	h1 {
+		font-size: 30px !important;
+	}
+	h2 {
+		font-size: 20px !important;
+	}
+	.ps-header {
+		padding: 60px 20px !important;
+	}
+	i {
+    	font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 741px) {
+	.ps-header {
+		padding: 150px 20px !important;
+	}
+	i {
+    	font-size: 16px;
+    }
 }
