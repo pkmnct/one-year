@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="title" content="One Year" />
+	<meta name="description" content="What has happened in one year?" />
+	<meta name="author" content="George Walker" />
+	<title>One Year</title>
+	<link rel="shortcut icon" id="favicon" href="favicon.png">
+	<link rel="stylesheet" type="text/css" href="parallax-scroller.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Bangers|Chelsea+Market|Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.3.4/css/lightcase.min.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.3.4/js/lightcase.min.js"></script>
+	<script type="text/javascript" src="jquery.parallax-scroller.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".list").parallaxScroller({
+				parallaxSpeed: 0.9,
+				tilt: -3,
+				startPosition: "40%"
+			});
+			var bgvideos = $('.videobg');
+			bgvideos.each(function(){
+				this.play();
+			});
+			$('.ps-header').lightcase();
+			$("#pausebutton").hide();
+		});
+	</script>
+	<script>
+		var tag = document.createElement('script');
+
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '390',
+				width: '640',
+				videoId: 'Pv8e2oLW0v0',
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+		}
+
+		function onPlayerReady(event) {
+			event.target.playVideo();
+			setTimeout(startVideo, 1000);
+		}
+
+		var done = false;
+		function onPlayerStateChange(event) {
+			if (event.data == YT.PlayerState.PLAYING && !done) {
+				done = true;
+			}
+			if (event.data != 1) {
+				//show play button
+				$("#pausebutton").hide();
+				$("#playbutton").show();
+			} else {
+				//show pause button
+				$("#playbutton").hide();
+				$("#pausebutton").show();
+			} 
+		}
+
+		function startVideo() {
+			event.target.playVideo();
+		}
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main">
+			<div class="header">
+				<h1>A Year in Life</h1>
+				<h2>What has happened in one year?</h2>
+			</div>
+			<div class="list">
+				<div class="list-item" data-ps-bg="images/met.jpg">
+					<h3><a class="ps-header" style="font-family: Chelsea Market;" href="images/met.jpg">A couple of pretty cool people (George and Alex) met in December 2015.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/bernie.jpg">
+					<h3><a class="ps-header" style="font-family: Bangers;" href="images/bernie.jpg">In March 2016, they caucused for the first time.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/portrait.jpg">
+					<h3><a class="ps-header" style="font-family: Chelsea Market;" href="images/portrait.jpg">That month George practiced portrait photography with Alex, too.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/tuttle.jpg">
+					<h3><a class="ps-header" style="font-family: Bangers;" href="images/tuttle.jpg">Come April, they explored Tuttle Creek with friends.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/pride.jpg">
+					<h3><a class="ps-header" style="font-family: Chelsea Market;" href="images/pride.jpg">They went to Little Apple Pride.</a></h3>
+				</div>
+				<div style="overflow: hidden;" class="list-item" data-ps-bg="images/dragshow.jpg">
+					<video playsinline autoplay muted loop class="videobg">
+						<source src="images/dragshow.mp4" type="video/mp4">
+					</video>
+					<h3 class="video-text" style="font-family: Bangers;"><a class="ps-header" href="images/dragshow.mp4">Alex went to his first Drag Show.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/firstapartment.jpg">
+					<h3><a class="ps-header" style="font-family: Chelsea Market;" href="images/firstapartment.jpg">Then, in August, he moved into his first apartment.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/hairdye.jpg">
+					<h3><a class="ps-header" style="font-family: Bangers;" href="images/hairdye.jpg">That month, George dyed his hair (for the first time) pink.</a></h3>
+				</div>
+				<div style="overflow: hidden;" class="list-item" data-ps-bg="images/kitter.jpg">
+					<video playsinline autoplay muted loop class="videobg" style="top: -60%">
+						<source src="images/kitter.mp4" type="video/mp4">
+					</video>
+					<h3 class="video-text"><a class="ps-header" style="font-family: Chelsea Market;" href="images/kitter.mp4">They befriended a Kitter.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/rockyhorror.jpg">
+					<h3><a class="ps-header" style="font-family: Bangers;" href="images/rockyhorror.jpg">In October, they went to see the Rocky Horror Picture Show.</a></h3>
+				</div>
+				<div style="overflow: hidden;" class="list-item" data-ps-bg="images/troye.jpg">
+					<video playsinline autoplay muted loop class="videobg" style="top: 0%">
+						<source src="images/troye.mp4" type="video/mp4">
+					</video>
+					<h3 class="video-text"><a class="ps-header" style="font-family: Chelsea Market;" href="images/troye.mp4">Then they saw Troye Sivan in concert.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/facemask.jpg">
+					<h3><a class="ps-header" style="font-family: Bangers;" href="images/facemask.jpg">In November, George had his first facemask.</a></h3>
+				</div>
+				<div class="list-item" data-ps-bg="images/oneyear.jpg">
+					<h3><a class="ps-header" style="font-family: Chelsea Market;" href="images/oneyear.jpg">Finally, in December 2016, they realized they'd been together a year.</a></h3>
+				</div>
+			</div>
+		</div>
+		<div id="playpause">
+			<p><a href="#player" style="color: white;">Troye Sivan: for him.</a>
+				<img id="playbutton" src="images/play.png" onclick="javascript:player.playVideo();">
+				<img id="pausebutton" src="images/pause.png" onclick="javascript:player.pauseVideo();">
+			</p>
+		</div>
+		<div class="footer">
+			<p>This site was created by <a href="http://www.georgewwalker.com">George Walker</a> to celebrate a year with Alex.</p>
+		</div>
+		<div id="player"></div>
+	</div>
+</body>
+</html>
