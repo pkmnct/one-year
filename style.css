@@ -162,6 +162,9 @@ video {
 	i {
     	font-size: 12px;
 	}
+	.list-item video {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 741px) {
