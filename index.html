@@ -83,15 +83,6 @@
 
 		function startVideo() {
 			event.target.playVideo();
-			setTimeout(function() {
-				if (event.data != 1) {
-					console.log("Video not playing, removing it.");
-					$("#player").remove();
-					$("#playpause").hide();
-				} else {
-					console.log("Video playing");
-				}
-			}, 1000);
 		}
 	</script>
 	<script>
